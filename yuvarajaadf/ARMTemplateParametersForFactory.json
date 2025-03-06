@@ -1,0 +1,102 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "yuvarajaadf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3forexcel_connectionString": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2forerroredcsv_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2forexcel_password": {
+			"value": ""
+		},
+		"AzureSqlDatabaseforrest_password": {
+			"value": ""
+		},
+		"RestService1_password": {
+			"value": ""
+		},
+		"blobforerrorcsv_connectionString": {
+			"value": ""
+		},
+		"linkedService1for storedprocedurerest_password": {
+			"value": ""
+		},
+		"linkedService1forstorepreocedure_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "yuvarajadb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"AzureSqlDatabase2forerroredcsv_properties_typeProperties_server": {
+			"value": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabase2forerroredcsv_properties_typeProperties_database": {
+			"value": "yuvarajadb"
+		},
+		"AzureSqlDatabase2forerroredcsv_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"AzureSqlDatabase2forexcel_properties_typeProperties_server": {
+			"value": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabase2forexcel_properties_typeProperties_database": {
+			"value": "yuvarajadb"
+		},
+		"AzureSqlDatabase2forexcel_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"AzureSqlDatabaseforrest_properties_typeProperties_server": {
+			"value": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabaseforrest_properties_typeProperties_database": {
+			"value": "yuvarajadb"
+		},
+		"AzureSqlDatabaseforrest_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://jsonplaceholder.typicode.com/users"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"linkedService1for storedprocedurerest_properties_typeProperties_server": {
+			"value": "yuvaraja.database.windows.net"
+		},
+		"linkedService1for storedprocedurerest_properties_typeProperties_database": {
+			"value": "yuvarajadb"
+		},
+		"linkedService1for storedprocedurerest_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"linkedService1forstorepreocedure_properties_typeProperties_server": {
+			"value": "yuvaraja.database.windows.net"
+		},
+		"linkedService1forstorepreocedure_properties_typeProperties_database": {
+			"value": "yuvarajadb"
+		},
+		"linkedService1forstorepreocedure_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		}
+	}
+}

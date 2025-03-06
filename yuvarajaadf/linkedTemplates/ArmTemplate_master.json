@@ -1,0 +1,279 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "yuvarajaadf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage3forexcel_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3forexcel'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase2forerroredcsv_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2forerroredcsv'"
+		},
+		"AzureSqlDatabase2forexcel_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2forexcel'"
+		},
+		"AzureSqlDatabaseforrest_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabaseforrest'"
+		},
+		"RestService1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'RestService1'"
+		},
+		"blobforerrorcsv_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'blobforerrorcsv'"
+		},
+		"linkedService1for storedprocedurerest_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'linkedService1for storedprocedurerest'"
+		},
+		"linkedService1forstorepreocedure_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'linkedService1forstorepreocedure'"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "yuvarajadb"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"AzureSqlDatabase2forerroredcsv_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabase2forerroredcsv_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "yuvarajadb"
+		},
+		"AzureSqlDatabase2forerroredcsv_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"AzureSqlDatabase2forexcel_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabase2forexcel_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "yuvarajadb"
+		},
+		"AzureSqlDatabase2forexcel_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"AzureSqlDatabaseforrest_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "yuvaraja.database.windows.net"
+		},
+		"AzureSqlDatabaseforrest_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "yuvarajadb"
+		},
+		"AzureSqlDatabaseforrest_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://jsonplaceholder.typicode.com/users"
+		},
+		"RestService1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"linkedService1for storedprocedurerest_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "yuvaraja.database.windows.net"
+		},
+		"linkedService1for storedprocedurerest_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "yuvarajadb"
+		},
+		"linkedService1for storedprocedurerest_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"linkedService1forstorepreocedure_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "yuvaraja.database.windows.net"
+		},
+		"linkedService1forstorepreocedure_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "yuvarajadb"
+		},
+		"linkedService1forstorepreocedure_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "yuvarajaadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureBlobStorage3forexcel_connectionString": {
+						"value": "[parameters('AzureBlobStorage3forexcel_connectionString')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"AzureSqlDatabase2forerroredcsv_password": {
+						"value": "[parameters('AzureSqlDatabase2forerroredcsv_password')]"
+					},
+					"AzureSqlDatabase2forexcel_password": {
+						"value": "[parameters('AzureSqlDatabase2forexcel_password')]"
+					},
+					"AzureSqlDatabaseforrest_password": {
+						"value": "[parameters('AzureSqlDatabaseforrest_password')]"
+					},
+					"RestService1_password": {
+						"value": "[parameters('RestService1_password')]"
+					},
+					"blobforerrorcsv_connectionString": {
+						"value": "[parameters('blobforerrorcsv_connectionString')]"
+					},
+					"linkedService1for storedprocedurerest_password": {
+						"value": "[parameters('linkedService1for storedprocedurerest_password')]"
+					},
+					"linkedService1forstorepreocedure_password": {
+						"value": "[parameters('linkedService1forstorepreocedure_password')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase2forerroredcsv_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2forerroredcsv_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2forerroredcsv_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2forerroredcsv_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2forerroredcsv_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2forerroredcsv_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase2forexcel_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2forexcel_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2forexcel_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2forexcel_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2forexcel_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2forexcel_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabaseforrest_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabaseforrest_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabaseforrest_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabaseforrest_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabaseforrest_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabaseforrest_properties_typeProperties_userName')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
+					},
+					"RestService1_properties_typeProperties_userName": {
+						"value": "[parameters('RestService1_properties_typeProperties_userName')]"
+					},
+					"linkedService1for storedprocedurerest_properties_typeProperties_server": {
+						"value": "[parameters('linkedService1for storedprocedurerest_properties_typeProperties_server')]"
+					},
+					"linkedService1for storedprocedurerest_properties_typeProperties_database": {
+						"value": "[parameters('linkedService1for storedprocedurerest_properties_typeProperties_database')]"
+					},
+					"linkedService1for storedprocedurerest_properties_typeProperties_userName": {
+						"value": "[parameters('linkedService1for storedprocedurerest_properties_typeProperties_userName')]"
+					},
+					"linkedService1forstorepreocedure_properties_typeProperties_server": {
+						"value": "[parameters('linkedService1forstorepreocedure_properties_typeProperties_server')]"
+					},
+					"linkedService1forstorepreocedure_properties_typeProperties_database": {
+						"value": "[parameters('linkedService1forstorepreocedure_properties_typeProperties_database')]"
+					},
+					"linkedService1forstorepreocedure_properties_typeProperties_userName": {
+						"value": "[parameters('linkedService1forstorepreocedure_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "yuvarajaadf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'yuvarajaadf_ArmTemplate_0')]"
+			]
+		}
+	]
+}
