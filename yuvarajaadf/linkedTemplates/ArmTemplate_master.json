@@ -39,9 +39,33 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'RestService1'"
 		},
+		"Snowflake1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Snowflake1'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"SqlServer2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer2'"
+		},
+		"SqlServer3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer3'"
+		},
+		"SqlServer4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer4'"
+		},
 		"blobforerrorcsv_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'blobforerrorcsv'"
+		},
+		"linkedService1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'linkedService1'"
 		},
 		"linkedService1for storedprocedurerest_password": {
 			"type": "secureString",
@@ -107,6 +131,66 @@
 			"type": "string",
 			"defaultValue": "yuvaraja"
 		},
+		"Snowflake1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "ASSESSMENT_1"
+		},
+		"Snowflake1_properties_typeProperties_role": {
+			"type": "string",
+			"defaultValue": "ACCOUNTADMIN"
+		},
+		"Snowflake1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "NRNDGLR-TVB95036.snowflakecomputing.com"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "JM-DKT-012"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Assessment"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "JM-DKT-012"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Assessment"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"SqlServer3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "JM-DKT-012"
+		},
+		"SqlServer3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Assessment"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "yuvaraja"
+		},
+		"SqlServer4_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "JM-DKT-012"
+		},
+		"SqlServer4_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "Assessment"
+		},
+		"SqlServer4_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
 		"linkedService1for storedprocedurerest_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "yuvaraja.database.windows.net"
@@ -130,6 +214,10 @@
 		"linkedService1forstorepreocedure_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "yuvaraja"
+		},
+		"linkedService2_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'linkedService2'"
 		},
 		"containerUri": {
 			"type": "string",
@@ -182,8 +270,14 @@
 					"RestService1_password": {
 						"value": "[parameters('RestService1_password')]"
 					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
 					"blobforerrorcsv_connectionString": {
 						"value": "[parameters('blobforerrorcsv_connectionString')]"
+					},
+					"linkedService1_connectionString": {
+						"value": "[parameters('linkedService1_connectionString')]"
 					},
 					"linkedService1for storedprocedurerest_password": {
 						"value": "[parameters('linkedService1for storedprocedurerest_password')]"
@@ -233,6 +327,15 @@
 					"RestService1_properties_typeProperties_userName": {
 						"value": "[parameters('RestService1_properties_typeProperties_userName')]"
 					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					},
 					"linkedService1for storedprocedurerest_properties_typeProperties_server": {
 						"value": "[parameters('linkedService1for storedprocedurerest_properties_typeProperties_server')]"
 					},
@@ -250,6 +353,9 @@
 					},
 					"linkedService1forstorepreocedure_properties_typeProperties_userName": {
 						"value": "[parameters('linkedService1forstorepreocedure_properties_typeProperties_userName')]"
+					},
+					"linkedService2_sasUri": {
+						"value": "[parameters('linkedService2_sasUri')]"
 					}
 				}
 			},
@@ -268,6 +374,54 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Snowflake1_password": {
+						"value": "[parameters('Snowflake1_password')]"
+					},
+					"SqlServer2_password": {
+						"value": "[parameters('SqlServer2_password')]"
+					},
+					"SqlServer3_password": {
+						"value": "[parameters('SqlServer3_password')]"
+					},
+					"SqlServer4_password": {
+						"value": "[parameters('SqlServer4_password')]"
+					},
+					"Snowflake1_properties_typeProperties_database": {
+						"value": "[parameters('Snowflake1_properties_typeProperties_database')]"
+					},
+					"Snowflake1_properties_typeProperties_role": {
+						"value": "[parameters('Snowflake1_properties_typeProperties_role')]"
+					},
+					"Snowflake1_properties_typeProperties_host": {
+						"value": "[parameters('Snowflake1_properties_typeProperties_host')]"
+					},
+					"SqlServer2_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_server')]"
+					},
+					"SqlServer2_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_database')]"
+					},
+					"SqlServer2_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer2_properties_typeProperties_userName')]"
+					},
+					"SqlServer3_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_server')]"
+					},
+					"SqlServer3_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_database')]"
+					},
+					"SqlServer3_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer3_properties_typeProperties_userName')]"
+					},
+					"SqlServer4_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer4_properties_typeProperties_server')]"
+					},
+					"SqlServer4_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer4_properties_typeProperties_database')]"
+					},
+					"SqlServer4_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer4_properties_typeProperties_userName')]"
 					}
 				}
 			},

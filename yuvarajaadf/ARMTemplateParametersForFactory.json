@@ -29,7 +29,25 @@
 		"RestService1_password": {
 			"value": ""
 		},
+		"Snowflake1_password": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"SqlServer2_password": {
+			"value": ""
+		},
+		"SqlServer3_password": {
+			"value": ""
+		},
+		"SqlServer4_password": {
+			"value": ""
+		},
 		"blobforerrorcsv_connectionString": {
+			"value": ""
+		},
+		"linkedService1_connectionString": {
 			"value": ""
 		},
 		"linkedService1for storedprocedurerest_password": {
@@ -80,6 +98,51 @@
 		"RestService1_properties_typeProperties_userName": {
 			"value": "yuvaraja"
 		},
+		"Snowflake1_properties_typeProperties_database": {
+			"value": "ASSESSMENT_1"
+		},
+		"Snowflake1_properties_typeProperties_role": {
+			"value": "ACCOUNTADMIN"
+		},
+		"Snowflake1_properties_typeProperties_host": {
+			"value": "NRNDGLR-TVB95036.snowflakecomputing.com"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "JM-DKT-012"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "Assessment"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"SqlServer2_properties_typeProperties_server": {
+			"value": "JM-DKT-012"
+		},
+		"SqlServer2_properties_typeProperties_database": {
+			"value": "Assessment"
+		},
+		"SqlServer2_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"SqlServer3_properties_typeProperties_server": {
+			"value": "JM-DKT-012"
+		},
+		"SqlServer3_properties_typeProperties_database": {
+			"value": "Assessment"
+		},
+		"SqlServer3_properties_typeProperties_userName": {
+			"value": "yuvaraja"
+		},
+		"SqlServer4_properties_typeProperties_server": {
+			"value": "JM-DKT-012"
+		},
+		"SqlServer4_properties_typeProperties_database": {
+			"value": "Assessment"
+		},
+		"SqlServer4_properties_typeProperties_userName": {
+			"value": "sa"
+		},
 		"linkedService1for storedprocedurerest_properties_typeProperties_server": {
 			"value": "yuvaraja.database.windows.net"
 		},
@@ -97,6 +160,9 @@
 		},
 		"linkedService1forstorepreocedure_properties_typeProperties_userName": {
 			"value": "yuvaraja"
+		},
+		"linkedService2_sasUri": {
+			"value": ""
 		}
 	}
 }
